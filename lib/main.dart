@@ -3,9 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/question.dart';
 
-void main() => runApp(MyApp());
+import 'answer.dart';
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -32,19 +36,9 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(title: const Text("My first App")),
         body: Column(children: [
           Question(questions[_questionIndex]),
-          RaisedButton(
-            child: const Text("Answer 1"),
-            // ignore: avoid_print
-            onPressed: () => print("Answer 1 chosen"),
-          ),
-          RaisedButton(
-            child: const Text("Answer 2"),
-            onPressed: _answerQuestion,
-          ),
-          RaisedButton(
-            child: const Text("Answer 3"),
-            onPressed: () => print("Answer 3 chosen"),
-          ),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
         ]),
       ),
     );
