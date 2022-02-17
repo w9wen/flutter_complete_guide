@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
 
-  Answer(this.selectHandler);
+  final String answerText;
+
+  Answer(this.selectHandler, this.answerText);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,8 @@ class Answer extends StatelessWidget {
       // ignore: deprecated_member_use
       child: RaisedButton(
         color: Colors.blue,
-        child: const Text("Answer 1"),
+        textColor: Colors.white,
+        child: Text(this.answerText),
         // ignore: avoid_print
         onPressed: selectHandler,
       ),
