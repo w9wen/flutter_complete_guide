@@ -15,7 +15,7 @@ class Answer extends StatelessWidget {
       child: RaisedButton(
         color: Colors.blue,
         textColor: Colors.white,
-        child: Text(this.answerText),
+        child: Text(answerText),
         // ignore: avoid_print
         onPressed: selectHandler,
       ),
